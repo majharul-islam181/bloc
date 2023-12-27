@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_bloc/screens/product_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: const Text('Home Screen')),
       body: Center(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductScreen()));
+          },
           child: const Text(
             "Get Products",
             style: TextStyle(fontSize: 20),

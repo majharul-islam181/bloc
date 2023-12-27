@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_bloc/bloc/products_bloc.dart';
+import 'package:test_bloc/bloc/products_event.dart';
 import 'package:test_bloc/screens/home_screen.dart';
 
 void main() {
@@ -10,14 +13,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return BlocProvider(
+      create: (context) => ProductBloc()..add(ProductLoadedEvent()),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const HomeScreen(),
       ),
-      home: const HomeScreen(),
     );
   }
 }
-
