@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => ProductBloc(ProductRepo()),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Test Bloc',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
